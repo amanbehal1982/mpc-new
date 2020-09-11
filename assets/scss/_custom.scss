@@ -1,0 +1,466 @@
+@mixin background-variable {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+@mixin shadow-background {
+    background-position: center top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+@mixin form-btn {
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: transparent;
+    width: 100%;
+    height: auto;
+    font-family: 'ITC Avant Garde Gothic Std';
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 35px;
+    padding: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease 0s, color 0.3s ease 0s;
+}
+
+body {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1780px;
+}
+
+* {
+    outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'ITC Avant Garde Gothic Std Demi';
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0;
+}
+
+ul,
+ul li,
+ol,
+ol li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+.hide-password {
+    display: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 1001;
+    transition: backgroung 0.3s ease 0s, padding 0.3s ease 0s;
+    .navbar {
+        padding: 0;
+        .header-logo {
+            width: auto;
+            height: 109px;
+            transition: height 0.3s ease 0s;
+        }
+        .navbar-outer {
+            .navbar-nav {
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                li {
+                    padding: 0 0 0 70px;
+                    font-family: 'ITC Avant Garde Gothic Std';
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    font-size: 19px;
+                    line-height: 25px;
+                    a {
+                        padding: 8px 20px;
+                        position: relative;
+                        display: block;
+                        color: #fff;
+                        &:before {
+                            content: "";
+                            background: transparent;
+                            width: 0;
+                            height: 2px;
+                            position: absolute;
+                            left: 50%;
+                            bottom: 5px;
+                            -webkit-transform: translateX(-50%);
+                            transform: translateX(-50%);
+                            transition: width .3s ease 0s;
+                        }
+                    }
+                    &:hover {
+                        a {
+                            &:before {
+                                background: #fff;
+                                width: 70%;
+                            }
+                        }
+                    }
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.fixedMenu {
+        background: #fff;
+        padding: 0;
+        .navbar {
+            .header-logo {
+                height: 80px;
+            }
+            .navbar-outer {
+                .navbar-nav {
+                    li {
+                        a {
+                            color: #000;
+                        }
+                        &:hover {
+                            a {
+                                &:before {
+                                    background: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-auth-outer {
+    .screen-outer-box {
+        height: 1311px;
+        align-items: center;
+        .welcome-screen-part {
+            background-image: url(../images/login-main-image.jpeg);
+            height: 100%;
+            @include background-variable;
+            position: relative;
+            z-index: 5;
+            .welcome-screen-shadow {
+                background-image: url(../images/login-image-shadow.png);
+                @include shadow-background;
+            }
+            .align-center-part {
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                text-align: center;
+                .welcome-new-text {
+                    display: inline-block;
+                    max-width: 730px;
+                    width: 100%;
+                    span {
+                        display: inline-block;
+                    }
+                    h1 {
+                        font-size: 90px;
+                        color: #fff;
+                        margin: 15px 0;
+                    }
+                    p {
+                        color: #fff;
+                        font-size: 25px;
+                        letter-spacing: 1.3px;
+                    }
+                }
+            }
+        }
+        .form-screen-part {
+            .dotted-small-back {
+                background-image: url(../images/small-dots-icon.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                right: -145px;
+                top: 20%;
+                width: 294px;
+                height: 368px;
+                z-index: 0;
+            }
+            .form-main-box {
+                position: relative;
+                z-index: 5;
+                margin-left: auto;
+                margin-right: 140px;
+                width: 560px;
+                h2 {
+                    color: #47BAAA;
+                    font-size: 48px;
+                    margin-bottom: 15px;
+                }
+                h4 {
+                    color: #000;
+                    font-size: 22px;
+                }
+                form.welcome-form {
+                    position: relative;
+                    width: 100%;
+                    font-family: 'Montserrat';
+                    font-weight: 300;
+                    margin-top: 35px;
+                    .form-group {
+                        margin-bottom: 35px;
+                        position: relative;
+                        .form-control {
+                            width: 100%;
+                            background: #fff;
+                            box-shadow: 0px 8px 36px rgba(#000, 0.15);
+                            border-radius: 10px;
+                            border: 0 none;
+                            color: #222222;
+                            font-size: 23px;
+                            line-height: 31px;
+                            padding: 22px 15px;
+                            position: relative;
+                            padding-right: 60px;
+                        }
+                        &.custom-control {
+                            padding-left: 50px;
+                            min-height: 35px;
+                            .custom-control-label {
+                                font-family: 'ITC Avant Garde Gothic Std Demi';
+                                font-weight: normal;
+                                color: #222222;
+                                font-size: 18px;
+                                line-height: 1.2;
+                                margin-top: 6px;
+                                &:before {
+                                    width: 35px;
+                                    height: 35px;
+                                    border-radius: 100%;
+                                    top: 0;
+                                    box-shadow: none !important;
+                                    outline: none !important;
+                                }
+                                &:after {
+                                    width: 35px;
+                                    height: 35px;
+                                    top: 0;
+                                }
+                            }
+                            .custom-control-input:checked {
+                                ~.custom-control-label {
+                                    &:before {
+                                        background: #47BAAA;
+                                    }
+                                }
+                            }
+                        }
+                        label.error {
+                            position: absolute;
+                            bottom: -20px;
+                            left: 0;
+                            width: 100%;
+                            margin: 0;
+                            color: #ff0000;
+                            font-size: 12px;
+                        }
+                        .small-input-icon {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            text-align: center;
+                            margin: auto;
+                            width: 60px;
+                            &.password-icon {
+                                cursor: pointer;
+                            }
+                            img {
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                right: 0;
+                                left: 0;
+                                margin: auto;
+                            }
+                        }
+                    }
+                    .signup-btn {
+                        @include form-btn;
+                        background: #47BAAA;
+                        color: #fff;
+                        margin-top: 20px;
+                        &:hover {
+                            background: transparent;
+                            border-color: #47BAAA;
+                            color: #47BAAA;
+                        }
+                    }
+                    &.login-form {
+                        .form-new-row {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 35px;
+                            .form-group {
+                                margin-bottom: 0;
+                                &.forgot-password {
+                                    a {
+                                        font-family: 'ITC Avant Garde Gothic Std Demi';
+                                        font-weight: normal;
+                                        font-size: 18px;
+                                        line-height: 1.2;
+                                        color: #222;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .already-accuount {
+                    text-align: center;
+                    margin-top: 30px;
+                    h6 {
+                        color: #222;
+                        font-size: 20px;
+                        a {
+                            color: #47BAAA;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background: #47BAAA;
+    padding-top: 50px;
+    .footer-logo {
+        width: auto;
+    }
+    .info-area {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 480px;
+        p {
+            color: #fff;
+            font-size: 23px;
+            &+p {
+                margin-top: 15px;
+            }
+        }
+    }
+    h3 {
+        font-size: 35px;
+        color: #fff;
+        margin-top: 30px;
+    }
+    ul.footer-menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-top: 42px;
+        li {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+            width: 100%;
+            padding: 2px 10px;
+            position: relative;
+            font-family: 'ITC Avant Garde Gothic Std';
+            font-weight: 500;
+            color: #fff;
+            font-size: 23px;
+            a {
+                color: #fff;
+                display: inline-block;
+                position: relative;
+                padding: 5px 0;
+                &:before {
+                    content: "";
+                    background: transparent;
+                    width: 0;
+                    height: 2px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 8px;
+                    transition: width .3s ease 0s;
+                }
+                &:hover {
+                    text-decoration: none;
+                    &:before {
+                        background: #fff;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    ul.footer-social-links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 56px;
+        li {
+            padding-right: 30px;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    p.copyright-part {
+        margin-top: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-top: 2px solid #fff;
+        text-align: center;
+        font-family: 'ITC Avant Garde Gothic Std';
+        font-weight: 500;
+        color: #fff;
+        font-size: 23px;
+        a {
+            color: #fff;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
